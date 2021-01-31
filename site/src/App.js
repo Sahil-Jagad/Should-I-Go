@@ -14,7 +14,7 @@ import DoctorPage from './pages/DoctorPage/DoctorPage';
 
 function App() {
   return (
-    <Router>
+    <Router basename="/Should-I-Go">
       <div className="App">
       <Header />
         <Switch>
