@@ -3,7 +3,7 @@ import "./GuidelinesPage.css"
 
 const GuidelinesPage = () => {
   return (
-    <div>
+    <div className="guidelines flexdiv">
       {/* add bkgd image */}
         {/* <div className = "landing-text">
             <h1>CDC GUIDELINES</h1>
@@ -16,10 +16,14 @@ const GuidelinesPage = () => {
   </div> */}
 
         <h1 class="first-class">CDC GUIDELINES</h1>
-        <h2 class="second-class">Wear a Mask!</h2>
-        <h2 class="second-class">No Large Gatherings!</h2>
-        <h2 class="second-class">Wash Your Hands!</h2>
-
+        <div>
+          <img src="/images/mask.png" />
+          <h2 class="second-class">Wear a Mask!</h2>
+          <img src="/images/close.png" />
+          <h2 class="second-class">No Large Gatherings!</h2>
+          <img src="/images/wash.png" />
+          <h2 class="second-class">Wash Your Hands!</h2>
+        </div>
     </div>
   )
 }
