@@ -1,24 +1,33 @@
-import logo from './logo.svg';
 import './App.css';
+import {BrowserRouter as Router, Route, Switch} from "react-router-dom"
+import ProtectedRoute from './ProtectedRoute/ProtectedRoute'
+import LandingPage from './pages/LandingPage/LandingPage'
+import SuccessPage from './pages/SuccessPage/SuccessPage'
+import ErrorPage from './pages/ErrorPage/ErrorPage'
+import StartPage from './pages/StartPage/StartPage'
+import GuidelinesPage from './pages/GuidelinesPage/GuidelinesPage';
+import NoGoPage from './pages/NoGoPage/NoGoPage'
+import SymptomsPage from './pages/SymptomsPage/SymptomsPage'
+import Header from './components/header'
+import Footer from './components/footer';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+      <Header />
+        <Switch>
+          <Route path="/" exact component={LandingPage} />
+          <Route path="/start" component={StartPage} />
+          <Route path="/guidelines" component={GuidelinesPage} />
+          <ProtectedRoute path="/success" component={SuccessPage} />
+          <ProtectedRoute path="/no" component={NoGoPage} />
+          <ProtectedRoute path="/symptoms" component={SymptomsPage} />
+          <Route component={ErrorPage}/>
+        </Switch>
+      <Footer/>
+      </div>
+    </Router>
   );
 }
 

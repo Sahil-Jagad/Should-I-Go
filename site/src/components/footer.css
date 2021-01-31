@@ -1,0 +1,15 @@
+.footerbar {
+  background-color: var(--darkblue);
+  position: absolute;
+  width: 100vw;
+  bottom: 0;
+  height: 50px;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  padding-left: 10px;
+}
+
+.footerText {
+  color: white;
+}
