@@ -1,0 +1,21 @@
+.grid{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    background-color: var(--lightblue);
+}
+
+
+.logo{
+    margin: 25px 10px;
+    float: left;
+    background-color: var(--lightblue);
+}
+
+.slogan{
+    float: right;
+}
+
+.header{
+    padding-bottom: -15rem;
+}
