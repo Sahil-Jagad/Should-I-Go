@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom'
 import './header.css'
 
 function Header(){
@@ -6,7 +7,9 @@ function Header(){
         <div className="header">
             <div className="grid">
                 <br/>
-                <img className="logo" src="/images/logo.png" alt="" style={{width: "3em", height: "3em"}}/>
+                <Link to="/">
+                    <img className="logo" src="/images/logo.png" alt="" style={{ width: "3em", height: "3em" }} />
+                </Link>
                 <em className="slogan">Wash Hands, Wear Masks, Stay Safe</em>
             </div>
         </div>

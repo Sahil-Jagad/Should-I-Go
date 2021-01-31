@@ -1,13 +1,21 @@
-.footerbar{
-    background-color: var(--darkblue);
-    position: absolute;
-    height: 50px;
-    margin-top: -150px;
-    display: flex;
-    justify-content: left;
-    align-items: center;
+.footerbar {
+  background-color: var(--darkblue);
+  position: absolute;
+  width: 100vw;
+  bottom: 0;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
 }
 
-.footerText{
+.footerText {
+  color: white;
+  float: left;
+  padding-right: 80rem;
+}
+
+.copyright {
     color: white;
+    float: right;
 }
