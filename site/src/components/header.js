@@ -8,7 +8,7 @@ function Header(){
             <div className="grid">
                 <br/>
                 <Link to="/">
-                    <img className="logo" src="/images/logo.png" alt="" style={{ width: "3em", height: "3em" }} />
+                    <img className="logo" src="./images/logo.png" alt="" style={{ width: "3em", height: "3em" }} />
                 </Link>
                 <em className="slogan">Wash Hands, Wear Masks, Stay Safe</em>
             </div>

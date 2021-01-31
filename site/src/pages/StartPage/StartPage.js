@@ -88,7 +88,7 @@ const StartPage = () => {
         <Link to="/success"><p onClick={noPlans}>I don't have any plans.</p></Link>
         <button onClick={submitPlans} className="button">Next</button>
       </div>
-      <img src="/images/schedule.png" alt="" width="400px"/>
+      <img src="./images/schedule.png" alt="" width="400px"/>
     </div>
   )
 }

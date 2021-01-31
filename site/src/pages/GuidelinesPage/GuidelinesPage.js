@@ -17,13 +17,13 @@ const GuidelinesPage = () => {
 
         <h1 className="first-class">CDC GUIDELINES</h1>
         <div>
-          <img src="/images/mask.png" alt="mask"/>
+          <img src="./images/mask.png" alt="mask"/>
           <h2 className="second-class">Wear a Mask!</h2>
-          <img src="/images/close.png" alt="X"/>
+          <img src="./images/close.png" alt="X"/>
           <h2 className="second-class">No Large Gatherings!</h2>
-          <img src="/images/wash.png" alt="wash hands"/>
+          <img src="./images/wash.png" alt="wash hands"/>
           <h2 className="second-class">Wash Your Hands!</h2>
-          <img src="/images/ruler.png" alt="ruler"/>
+          <img src="./images/ruler.png" alt="ruler"/>
           <h2 className="second-class">Stay 6 Feet Apart!</h2>
         </div>
     </div>
