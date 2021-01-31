@@ -15,4 +15,4 @@ const symptomsData = [
       {id: 13, value: "Diarrhea", isChecked: false},
     ]
 
-  export default symptomsData
+export default symptomsData
