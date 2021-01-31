@@ -1,5 +1,6 @@
 import React  from 'react'
 import SymptomItem from './SymptomItem'
+import { withRouter } from 'react-router-dom';
 import symptomsData from './symptomsData'
 import axios from "axios"
 import "./SymptomsPage.css"
@@ -22,9 +23,21 @@ class SymptomsPage extends React.Component{
         sympList = [...sympList, symptoms[i].children[1].innerHTML]
       }
     }
-    console.log(sympList);
     axios.post(`https://covid-should-i-go.herokuapp.com/symptoms`, {"symptoms": sympList}).then((res) => {
       console.log(res);
+      sessionStorage.setItem("token", "auth");
+      if (res.data.testForCovid) {
+        this.props.history.push({
+          pathname: "/doctor",
+        })
+      } else {
+        this.props.history.push({
+          pathname: "/success",
+          deaths: res.data.deaths,
+          deathIncrease: res.data.deathIncrease,
+          critical: res.data.critical
+        })
+      }
     })
   }
 
@@ -53,4 +66,4 @@ class SymptomsPage extends React.Component{
 
 }
 
-export default SymptomsPage
+export default withRouter(SymptomsPage);
