@@ -20,9 +20,9 @@ function App() {
           <Route path="/" exact component={LandingPage} />
           <Route path="/start" component={StartPage} />
           <Route path="/guidelines" component={GuidelinesPage} />
-          <ProtectedRoute path="/success" component={SuccessPage} />
-          <ProtectedRoute path="/no" component={NoGoPage} />
-          <ProtectedRoute path="/symptoms" component={SymptomsPage} />
+          <Route path="/success" component={SuccessPage} />
+          <Route path="/no" component={NoGoPage} />
+          <Route path="/symptoms" component={SymptomsPage} />
           <Route component={ErrorPage}/>
         </Switch>
       <Footer/>
