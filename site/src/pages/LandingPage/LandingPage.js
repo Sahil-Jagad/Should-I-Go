@@ -23,6 +23,11 @@ const LandingPage = () => {
     exited: { opacity: 0},
   };
 
+  let audio = new Audio("/audio/The Clash - Should I Stay or Should I Go (Official Audio).mp3")
+  const start = () => {
+    audio.play()
+  }
+
   return (
       <div className="landing-page flexdiv">
       <img src="/images/robot.png" className="landing-logo" />
@@ -37,6 +42,7 @@ const LandingPage = () => {
             <Link to="start">
               <button className="landing-launch">LAUNCH APPLICATION</button>
             </Link>
+            <button className="landing-launch2" onClick={start}>PLAY SONG</button>
           </div>
         )}
       </Transition>
