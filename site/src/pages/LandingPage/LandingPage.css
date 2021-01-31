@@ -4,6 +4,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100vw;
 }
 .landing-logo {
   max-width: 450px;
@@ -37,4 +38,8 @@
   font-size: 1rem;
   border-radius: 25px;
   cursor: pointer;
+}
+.landing-launch:active {
+  filter: none;
+  transform: translate(1px, 1px);
 }

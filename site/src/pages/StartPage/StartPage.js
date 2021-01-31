@@ -1,36 +1,45 @@
-import React from 'react'
+import React, {useState} from 'react'
 import Geosuggest from 'react-geosuggest';
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 import './StartPage.css'
 
+/*global google*/
+
 const StartPage = () => {
-  /**
-   * When a suggest got selected
-   */
-  const onSuggestSelect = (suggest) => console.log(suggest);
 
-  /**
-   * When there are no suggest results
-   */
-  const onSuggestNoResults = (userInput) =>
-    console.log(`onSuggestNoResults for : ${userInput}`);
+  const [date, setDate] = useState(new Date())
+  const [state, setState] = useState("")
 
-  const fixtures = [
-    { label: 'New York', location: { lat: 40.7033127, lng: -73.979681 } },
-    { label: 'Rio', location: { lat: -22.066452, lng: -42.9232368 } },
-    { label: 'Tokyo', location: { lat: 35.673343, lng: 139.710388 } }
-  ];
+  const closeSuggestions = () => {
+    const suggestions = document.getElementsByTagName('ul')[0]
+    suggestions.style.display = 'none';
+  }
+
+  const onFocus = () => {
+    const suggestions = document.getElementsByTagName('ul')[0]
+    suggestions.style.display = 'block';
+  }
+
+  const onSuggestSelect = (place) => {
+    closeSuggestions()
+    setState(place.description)
+  };
 
   return (
     <div>
       <h1>What are your plans this week?</h1>
-      <Geosuggest
-        fixtures={fixtures}
+      <p>Where?</p>
+      <Geosuggest className="location"
+        placeholder="Locations"
+        onBlur={closeSuggestions}
+        onFocus={onFocus}
         onSuggestSelect={onSuggestSelect}
-        onSuggestNoResults={onSuggestNoResults}
-        location={null}
+        location={new google.maps.LatLng(53.558572, 9.9278215)}
         radius="20"
       />
-      {/* <input/> */}
+      <p>When?</p>
+      <DatePicker selected={date} onChange={d => setDate(d)} />
     </div>
   )
 }
