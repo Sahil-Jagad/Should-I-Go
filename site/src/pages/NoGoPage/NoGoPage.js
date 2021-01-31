@@ -1,6 +1,6 @@
 import React from 'react'
 import {useLocation} from "react-router-dom"
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer} from 'recharts';
+import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer} from 'recharts';
 import './NoGoPage.css'
 
 
