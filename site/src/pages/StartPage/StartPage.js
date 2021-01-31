@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import axios from "axios"
 import {Link, useHistory} from 'react-router-dom'
 import Geosuggest from 'react-geosuggest';
 import DatePicker from "react-datepicker";
@@ -28,9 +29,9 @@ const StartPage = () => {
     if (place !== undefined) {
       const str = place.description.split(", ");
       if (str.length == 3) {
-        setState(str[1])
+        setState(str[1].toLowerCase())
       } else if (str.length == 2) {
-        setState(str[0])
+        setState("ca")
       }
     } else {
       const suggestions = document.getElementsByTagName('ul')[0]
@@ -43,15 +44,17 @@ const StartPage = () => {
     if (state == "") {
       alert("Location not selected")
     } else {
-      // make api call here
+      axios.get(`https://covid-should-i-go.herokuapp.com/start/${state}`).then((res) => {
+        console.log(res)
+      })
       // redirect based on response
     }
     console.log("state: " + state);
-    sessionStorage.setItem("token", "auth");
-    push({
-      pathname: "/no",
-      msg: "hello"
-    })
+    // sessionStorage.setItem("token", "auth");
+    // push({
+    //   pathname: "/no",
+    //   msg: "hello"
+    // })
   }
 
   return (
