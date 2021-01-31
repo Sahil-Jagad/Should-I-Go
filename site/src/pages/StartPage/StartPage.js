@@ -29,7 +29,7 @@ const StartPage = () => {
     if (place !== undefined) {
       const str = place.description.split(", ");
       if (str.length == 3) {
-        setState(str[1].toLowerCase())
+        setState(str[str.length - 2].toLowerCase())
       } else if (str.length == 2) {
         setState("ca")
       }
@@ -40,21 +40,32 @@ const StartPage = () => {
     }
   };
 
+  const noPlans = () => {
+    sessionStorage.setItem("token", "auth");
+  }
+
   const submitPlans = () => {
     if (state == "") {
       alert("Location not selected")
     } else {
+      sessionStorage.setItem("token", "auth");
       axios.get(`https://covid-should-i-go.herokuapp.com/start/${state}`).then((res) => {
-        console.log(res)
+        if (res.data.shouldGoOut) {
+          push({
+            pathname: "/symptoms",
+          })
+        } else {
+          push({
+            pathname: "/no",
+            deaths: res.data.deaths,
+            deathIncrease: res.data.deathIncrease,
+            critical: res.data.critical
+          })
+        }
       })
-      // redirect based on response
     }
     console.log("state: " + state);
-    // sessionStorage.setItem("token", "auth");
-    // push({
-    //   pathname: "/no",
-    //   msg: "hello"
-    // })
+    
   }
 
   return (
@@ -76,7 +87,7 @@ const StartPage = () => {
             <p>When?</p>
             <DatePicker className="date" selected={date} onChange={d => setDate(d)} />
           </div>
-        <Link to="/success"><p>I don't have any plans.</p></Link>
+        <Link to="/success"><p onClick={noPlans}>I don't have any plans.</p></Link>
         <button onClick={submitPlans} className="button">Next</button>
       </div>
       <img src="/images/schedule.png" width="400px"/>
