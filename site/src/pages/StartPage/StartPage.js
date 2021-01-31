@@ -64,8 +64,6 @@ const StartPage = () => {
         }
       })
     }
-    console.log("state: " + state);
-    
   }
 
   return (
