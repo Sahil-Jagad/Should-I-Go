@@ -7,11 +7,13 @@ import ErrorPage from './pages/ErrorPage/ErrorPage'
 import StartPage from './pages/StartPage/StartPage'
 import NoGoPage from './pages/NoGoPage/NoGoPage'
 import SymptomsPage from './pages/SymptomsPage/SymptomsPage'
+import Header from './components/header'
 
 function App() {
   return (
     <Router>
       <div className="App">
+      <Header />
         <Switch>
           <Route path="/" exact component={LandingPage} />
           <Route path="/start" component={StartPage} />
