@@ -89,7 +89,6 @@ const StartPage = () => {
         <button onClick={submitPlans} className="button">Next</button>
       </div>
       <img src="/images/schedule.png" alt="" width="400px"/>
-      
     </div>
   )
 }

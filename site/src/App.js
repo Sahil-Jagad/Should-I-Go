@@ -10,6 +10,7 @@ import NoGoPage from './pages/NoGoPage/NoGoPage'
 import SymptomsPage from './pages/SymptomsPage/SymptomsPage'
 import Header from './components/header'
 import Footer from './components/footer';
+import DoctorPage from './pages/DoctorPage/DoctorPage';
 
 function App() {
   return (
@@ -20,9 +21,10 @@ function App() {
           <Route path="/" exact component={LandingPage} />
           <Route path="/start" component={StartPage} />
           <Route path="/guidelines" component={GuidelinesPage} />
-          <Route path="/success" component={SuccessPage} />
-          <Route path="/no" component={NoGoPage} />
-          <Route path="/symptoms" component={SymptomsPage} />
+          <Route path="/doctor" component={DoctorPage} />
+          <ProtectedRoute path="/success" component={SuccessPage} />
+          <ProtectedRoute path="/no" component={NoGoPage} />
+          <ProtectedRoute path="/symptoms" component={SymptomsPage} />
           <Route component={ErrorPage}/>
         </Switch>
       <Footer/>

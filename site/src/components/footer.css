@@ -11,11 +11,10 @@
 
 .footerText {
   color: white;
-  float: left;
-  padding-right: 80rem;
 }
 
 .copyright {
-    color: white;
-    float: right;
+  color: white;
+  float: right;
+  margin: 0 auto;
 }
