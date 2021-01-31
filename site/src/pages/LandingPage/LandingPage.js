@@ -25,7 +25,7 @@ const LandingPage = () => {
 
   return (
       <div className="landing-page flexdiv">
-      <img src="/images/robot.png" className="landing-logo" />
+      <img src="/images/robot.png" alt="robot logo" className="landing-logo" />
       <Transition in={inProp} timeout={duration}>
         {state => (
           <div className="landing-text" style={{

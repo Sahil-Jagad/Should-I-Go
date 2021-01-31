@@ -1,7 +1,7 @@
 import React from 'react';
 import './footer.css'
 
-const {useState, useEffect} = React;
+const {useState} = React;
 const users = ["Irvine", "Long Beach", "Fremont", "Cupertino"];
 var key_stroke = { 'heart': Array('\u2665') };
 
