@@ -6,6 +6,7 @@ import SuccessPage from './pages/SuccessPage/SuccessPage'
 import ErrorPage from './pages/ErrorPage/ErrorPage'
 import StartPage from './pages/StartPage/StartPage'
 import NoGoPage from './pages/NoGoPage/NoGoPage'
+import SymptomsPage from './pages/SymptomsPage/SymptomsPage'
 
 function App() {
   return (
