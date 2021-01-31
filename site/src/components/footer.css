@@ -2,7 +2,8 @@
     background-color: var(--darkblue);
     position: absolute;
     height: 50px;
-    margin-top: -150px;
+    width: 100%;
+    margin-top: -100px;
     display: flex;
     justify-content: left;
     align-items: center;
@@ -10,4 +11,5 @@
 
 .footerText{
     color: white;
+    margin: 25px 10px;
 }
