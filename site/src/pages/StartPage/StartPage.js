@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import {Link, Redirect} from 'react-router-dom'
+import {Link, useHistory} from 'react-router-dom'
 import Geosuggest from 'react-geosuggest';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
@@ -8,6 +8,7 @@ import './StartPage.css'
 /*global google*/
 
 const StartPage = () => {
+  const { push } = useHistory();
 
   const [date, setDate] = useState(new Date())
   const [state, setState] = useState("")
@@ -46,6 +47,11 @@ const StartPage = () => {
       // redirect based on response
     }
     console.log("state: " + state);
+    sessionStorage.setItem("token", "auth");
+    push({
+      pathname: "/no",
+      msg: "hello"
+    })
   }
 
   return (
