@@ -1,25 +1,25 @@
 .symptoms-page {
   margin: 0;
-  padding-top: 8rem;
-  height: 100vh;
   display: flex;
+  height: 100vh;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   width: 100vw;
   text-align: left;
 }
 
 .checkbox-grid {
-  columns: 2 auto;
+  columns: 3 auto;
 }
 
 .almost-title {
-  font-size: 7rem;
+  font-size: 5rem;
   margin: 0;
 }
 .first-header,
 .second-header {
-  font-size: 4rem;
+  font-size: 2.5rem;
   margin: 0;
   color: var(--yellow);
 }
@@ -40,12 +40,12 @@
 }
 
 .checkbox input[type="checkbox"]:checked ~ label::before {
-    color: #7bbe72;
+  color: #7bbe72;
 }
 
 .checkbox input[type="checkbox"]:checked ~ label::after {
-    -webkit-transform: rotate(-45deg) scale(1);
-    transform: rotate(-45deg) scale(1);
+  -webkit-transform: rotate(-45deg) scale(1);
+  transform: rotate(-45deg) scale(1);
 }
 
 .symptom p {
