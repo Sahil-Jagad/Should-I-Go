@@ -23,14 +23,14 @@ const LandingPage = () => {
     exited: { opacity: 0},
   };
 
-  let audio = new Audio("/audio/The Clash - Should I Stay or Should I Go (Official Audio).mp3")
+  let audio = new Audio("./audio/The Clash - Should I Stay or Should I Go (Official Audio).mp3")
   const start = () => {
     audio.play()
   }
 
   return (
       <div className="landing-page flexdiv">
-      <img src="/images/robot.png" alt="robot logo" className="landing-logo" />
+      <img src="./images/robot.png" alt="robot logo" className="landing-logo" />
       <Transition in={inProp} timeout={duration}>
         {state => (
           <div className="landing-text" style={{
