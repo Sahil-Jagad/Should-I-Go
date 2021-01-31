@@ -28,9 +28,9 @@ const StartPage = () => {
     closeSuggestions()
     if (place !== undefined) {
       const str = place.description.split(", ");
-      if (str.length == 3) {
+      if (str.length === 3) {
         setState(str[1].toLowerCase())
-      } else if (str.length == 2) {
+      } else if (str.length === 2) {
         setState("ca")
       }
     } else {
@@ -41,7 +41,7 @@ const StartPage = () => {
   };
 
   const submitPlans = () => {
-    if (state == "") {
+    if (state === "") {
       alert("Location not selected")
     } else {
       axios.get(`https://covid-should-i-go.herokuapp.com/start/${state}`).then((res) => {
@@ -79,7 +79,7 @@ const StartPage = () => {
         <Link to="/success"><p>I don't have any plans.</p></Link>
         <button onClick={submitPlans} className="button">Next</button>
       </div>
-      <img src="/images/schedule.png" width="400px"/>
+      <img src="/images/schedule.png" alt="" width="400px"/>
       
     </div>
   )
