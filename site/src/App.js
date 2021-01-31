@@ -8,6 +8,7 @@ import StartPage from './pages/StartPage/StartPage'
 import NoGoPage from './pages/NoGoPage/NoGoPage'
 import SymptomsPage from './pages/SymptomsPage/SymptomsPage'
 import Header from './components/header'
+import Footer from './components/footer';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <ProtectedRoute path="/symptoms" component={SymptomsPage} />
           <Route component={ErrorPage}/>
         </Switch>
+      <Footer/>
       </div>
     </Router>
   );
