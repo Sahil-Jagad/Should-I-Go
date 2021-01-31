@@ -24,7 +24,7 @@ const LandingPage = () => {
   };
 
   return (
-      <div className="landing-page">
+      <div className="landing-page flexdiv">
       <img src="/images/robot.png" className="landing-logo" />
       <Transition in={inProp} timeout={duration}>
         {state => (

@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import {Link, Redirect} from 'react-router-dom'
 import Geosuggest from 'react-geosuggest';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
@@ -23,23 +24,54 @@ const StartPage = () => {
 
   const onSuggestSelect = (place) => {
     closeSuggestions()
-    setState(place.description)
+    if (place !== undefined) {
+      const str = place.description.split(", ");
+      if (str.length == 3) {
+        setState(str[1])
+      } else if (str.length == 2) {
+        setState(str[0])
+      }
+    } else {
+      const suggestions = document.getElementsByTagName('ul')[0]
+      suggestions.style.display = 'block';
+      setState('')
+    }
   };
 
+  const submitPlans = () => {
+    if (state == "") {
+      alert("Location not selected")
+    } else {
+      // make api call here
+      // redirect based on response
+    }
+    console.log("state: " + state);
+  }
+
   return (
-    <div>
-      <h1>What are your plans this week?</h1>
-      <p>Where?</p>
-      <Geosuggest className="location"
-        placeholder="Locations"
-        onBlur={closeSuggestions}
-        onFocus={onFocus}
-        onSuggestSelect={onSuggestSelect}
-        location={new google.maps.LatLng(53.558572, 9.9278215)}
-        radius="20"
-      />
-      <p>When?</p>
-      <DatePicker selected={date} onChange={d => setDate(d)} />
+    <div className="flexdiv" style={{gridTemplateColumns: '1fr 1fr', height: "100vh"}}>
+      <div className="plans">
+        <h1>What are your plans this week?</h1>
+          <div className="where">
+            <p>Where?</p>
+            <Geosuggest className="location"
+              placeholder="Search"
+              onBlur={closeSuggestions}
+              onFocus={onFocus}
+              onSuggestSelect={onSuggestSelect}
+              location={new google.maps.LatLng(53.558572, 9.9278215)}
+              radius="20"
+            />
+          </div>
+          <div className="when">
+            <p>When?</p>
+            <DatePicker className="date" selected={date} onChange={d => setDate(d)} />
+          </div>
+        <Link to="/success"><p>I don't have any plans.</p></Link>
+        <button onClick={submitPlans} className="button">Next</button>
+      </div>
+      <img src="/images/schedule.png" width="400px"/>
+      
     </div>
   )
 }
