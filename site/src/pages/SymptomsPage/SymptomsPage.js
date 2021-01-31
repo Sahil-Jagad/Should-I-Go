@@ -31,18 +31,19 @@ class SymptomsPage extends React.Component{
       handleChange={this.handleChange}/>)
     return(
       <div className="symptoms-page">
-        <h1 className="almost-title">Almost There</h1>
+        <div>
+          <h1 className="almost-title">Almost There</h1>
 
-        <h2 className="first-header">It is safe for you to social distance.</h2>
+          <p className="first-header">It is safe for you to social distance.</p>
 
-        <h2 className="second-header">But first...</h2>
+          <p className="second-header">But first...</p>
 
-        <h1 className="third-header">What are your symptoms?</h1>
+          <h1 className="third-header">What are your symptoms?</h1>
 
-        <ul className="checkbox-grid">
-          {symptomItems}
-        </ul>
-        
+          <ul className="checkbox-grid">
+            {symptomItems}
+          </ul>
+        </div>
       </div>
     )
   }

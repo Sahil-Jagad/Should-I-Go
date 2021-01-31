@@ -17,6 +17,7 @@ function App() {
           <Route path="/start" component={StartPage} />
           <ProtectedRoute path="/success" component={SuccessPage} />
           <ProtectedRoute path="/no" component={NoGoPage} />
+          <Route path="/symptoms" component={SymptomsPage} />
           <Route component={ErrorPage}/>
         </Switch>
       </div>
