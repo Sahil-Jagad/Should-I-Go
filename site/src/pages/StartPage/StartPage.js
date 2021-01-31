@@ -28,9 +28,9 @@ const StartPage = () => {
     closeSuggestions()
     if (place !== undefined) {
       const str = place.description.split(", ");
-      if (str.length == 3) {
+      if (str.length === 3) {
         setState(str[str.length - 2].toLowerCase())
-      } else if (str.length == 2) {
+      } else if (str.length === 2) {
         setState("ca")
       }
     } else {
@@ -64,8 +64,6 @@ const StartPage = () => {
         }
       })
     }
-    console.log("state: " + state);
-    
   }
 
   return (
@@ -91,7 +89,6 @@ const StartPage = () => {
         <button onClick={submitPlans} className="button">Next</button>
       </div>
       <img src="/images/schedule.png" alt="" width="400px"/>
-      
     </div>
   )
 }

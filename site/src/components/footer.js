@@ -1,7 +1,7 @@
 import React from 'react';
 import './footer.css'
 
-const {useState, useEffect} = React;
+const {useState} = React;
 const users = ["Irvine", "Long Beach", "Fremont", "Cupertino"];
 var key_stroke = { 'heart': Array('\u2665') };
 
@@ -21,7 +21,8 @@ function Footer(){
     return (
         <div className="footerbar" onClick={handleAssigneeOnClick}>
             <div>
-                <footer className="footerText"> Made with {key_stroke.heart} {users[selected]}, CA</footer>
+                <footer className="footerText"> Made with {key_stroke.heart} in {users[selected]}, CA</footer>
+                <footer className="copyright">© Sahil, Xuan, Harshini, Sanjana 2021</footer>
             </div>
         </div>
     )

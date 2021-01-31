@@ -5,11 +5,16 @@
   bottom: 0;
   height: 50px;
   display: flex;
-  justify-content: left;
   align-items: center;
   padding-left: 10px;
 }
 
 .footerText {
   color: white;
+}
+
+.copyright {
+  color: white;
+  float: right;
+  margin: 0 auto;
 }
