@@ -21,7 +21,7 @@ function Footer(){
     return (
         <div className="footerbar" onClick={handleAssigneeOnClick}>
             <div>
-                <footer className="footerText"> Made with {key_stroke.heart} {users[selected]},CA</footer>
+                <footer className="footerText"> Made with {key_stroke.heart} {users[selected]}, CA</footer>
             </div>
         </div>
     )
