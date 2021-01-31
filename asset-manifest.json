@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/Should-I-Go/static/css/main.44701dd4.chunk.css",
+    "main.js": "/Should-I-Go/static/js/main.c0205a8c.chunk.js",
+    "main.js.map": "/Should-I-Go/static/js/main.c0205a8c.chunk.js.map",
+    "runtime-main.js": "/Should-I-Go/static/js/runtime-main.a803f6bd.js",
+    "runtime-main.js.map": "/Should-I-Go/static/js/runtime-main.a803f6bd.js.map",
+    "static/css/2.00850458.chunk.css": "/Should-I-Go/static/css/2.00850458.chunk.css",
+    "static/js/2.6299e0a0.chunk.js": "/Should-I-Go/static/js/2.6299e0a0.chunk.js",
+    "static/js/2.6299e0a0.chunk.js.map": "/Should-I-Go/static/js/2.6299e0a0.chunk.js.map",
+    "static/js/3.cebd9f76.chunk.js": "/Should-I-Go/static/js/3.cebd9f76.chunk.js",
+    "static/js/3.cebd9f76.chunk.js.map": "/Should-I-Go/static/js/3.cebd9f76.chunk.js.map",
+    "index.html": "/Should-I-Go/index.html",
+    "static/css/2.00850458.chunk.css.map": "/Should-I-Go/static/css/2.00850458.chunk.css.map",
+    "static/css/main.44701dd4.chunk.css.map": "/Should-I-Go/static/css/main.44701dd4.chunk.css.map",
+    "static/js/2.6299e0a0.chunk.js.LICENSE.txt": "/Should-I-Go/static/js/2.6299e0a0.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.a803f6bd.js",
+    "static/css/2.00850458.chunk.css",
+    "static/js/2.6299e0a0.chunk.js",
+    "static/css/main.44701dd4.chunk.css",
+    "static/js/main.c0205a8c.chunk.js"
+  ]
+}
