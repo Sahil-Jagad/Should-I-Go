@@ -1,28 +1,30 @@
 import React  from 'react'
 import SymptomItem from './SymptomItem'
 import symptomsData from './symptomsData'
+import axios from "axios"
 import "./SymptomsPage.css"
 
 class SymptomsPage extends React.Component{
+  componentDidMount() {
+    sessionStorage.removeItem("token")
+  }
+  
   constructor(){
     super()
-    this.state = {
-      symptoms: symptomsData
-    }
-    this.handleChange = this.handleChange.bind(this)
+    this.submitSymptoms = this.submitSymptoms.bind(this)
   }
 
-  handleChange(id){
-    this.setState(prevState => {
-      const updatedSymptoms = prevState.symptoms.map(symp => {
-        if (symp.id === id){
-          symp.completed = !symp.completed
-        }
-        return symp
-      })
-      return {
-        todos: updatedSymptoms
+  submitSymptoms() {
+    let sympList = [];
+    const symptoms = document.getElementsByClassName("symptom")
+    for (let i=0; i<symptoms.length; i+=1) {
+      if (symptoms[i].firstElementChild.checked) {
+        sympList = [...sympList, symptoms[i].children[1].innerHTML]
       }
+    }
+    console.log(sympList);
+    axios.post(`https://covid-should-i-go.herokuapp.com/symptoms`, {"symptoms": sympList}).then((res) => {
+      console.log(res);
     })
   }
 
@@ -43,6 +45,7 @@ class SymptomsPage extends React.Component{
           <ul className="checkbox-grid">
             {symptomItems}
           </ul>
+          <button className="button" onClick={this.submitSymptoms}>Next</button>
         </div>
       </div>
     )

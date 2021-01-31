@@ -3,7 +3,7 @@ import React from 'react'
 function SymptomItem(props){
     return (
       <div className="symptom">
-          <input className="checkbox" type="checkbox" onChange={() => props.handleChange(props.item.id)}/>
+          <input id={props.item.id} type="checkbox" />
           <p>{props.item.value}</p>
 
       </div>
